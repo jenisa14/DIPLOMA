@@ -1,0 +1,230 @@
+#include <stdio.h>
+#include <string.h>
+
+void insert();
+void del();
+void search();
+void display();
+
+struct node
+{
+	char name[10];
+	int num;
+	struct node *next;
+};
+
+struct node *first = NULL;
+
+int main()
+{	
+	int op;
+	
+
+	while(1)
+	{
+		printf("\n");
+		printf("\n");
+		printf("\n");
+		printf("\n                     --------------------------------------------");
+		printf("\n                     |---------WELCOME TO PHONE-BOOK------------|");
+		printf("\n                     --------------------------------------------");
+		printf("\n");
+		printf("\n                   ->  below are some operation you can perform on your phone book");
+		printf("\n");
+		printf("\n");
+		printf("\n                     1. insert");
+		printf("\n                     2. delete");
+		printf("\n                     3. search");
+		printf("\n                     4. display");
+		printf("\n                     5. exit");
+		printf("\n");
+		printf("\n                    ------------------------------------");
+		printf("\n                    enter your choice :- ");
+		scanf("%d",&op);
+		printf("                    ------------------------------------");
+		printf("\n");
+		printf("\n");
+		printf("\n");
+		switch (op)
+		{
+			case 1:
+				insert();
+				break;
+			case 2:
+				del();
+				break;
+			case 3:
+				search();
+				break;
+			
+			case 4:
+				display();
+				break;
+				
+			case 5:
+				exit(0);
+		}
+	}
+}
+
+void insert()
+{
+	struct node *ptr, *save = first;
+	char c[10] = "\0";
+	int n;
+	
+	ptr = (struct node*)malloc(sizeof(struct node));
+
+	printf("                              INSERT OPERATION  ");
+	printf("\n                    ----------------------------------------");
+	printf("\n             		enter name for contact :-  ");
+	scanf("%s", c);
+	printf("\n             		enter phone number :- ");
+	scanf("%d", &n);
+	printf("\n                    ----------------------------------------");
+	
+	ptr->num = n;
+	strcpy(ptr->name,c);
+	ptr->next = NULL;
+	
+	if(first==NULL)
+	{
+		first= ptr;
+		ptr->next = NULL;
+		return(0);
+	}
+	
+	else if(strcmp(c,first->name)<0)
+	{
+		ptr->next = first;
+		first = ptr;
+		return(0);
+	}	
+	else if(strcmp(c,save->name)==0)
+	{
+		printf("cant enter the same name");
+	}
+	else
+	{
+		while(save!='\0' && strcmp(save->next->name,c)<0)
+		{	
+			save = save->next;
+		}	
+	}
+	ptr->next = save->next;	
+	save->next = ptr;
+
+}
+
+void del()
+{
+	struct node *ptr,*pre;
+	char c[10] = "\0";
+	
+	
+	if(first==NULL)
+	{
+		printf("list is empty");
+		return(0);
+	}
+	
+	
+	printf("                              DELETE OPERATION  ");
+	printf("\n            ------------------------------------------------------------");
+	printf("\n                 enter the name of the contact you want to delete :- ");
+	scanf("%s",c);
+	printf("\n            -----------------------------------------------------------");
+	
+	
+	ptr = first;
+	pre = ptr;
+	if(strcmp(first->name,c)==0)
+	{
+		first = ptr->next;
+		free(ptr);
+	
+	}
+	else
+	{
+		while(strcmp(ptr->name,c)!=0)
+		{
+			pre = ptr;
+			ptr = ptr->next;
+		}
+		pre->next = ptr->next;
+		free(ptr);
+	}
+}
+
+
+void search()
+{
+	struct node *ptr = first;
+	int f = 0;
+	char c[10] = "\0";
+	
+	if(first==NULL)
+	{
+		printf("list is empty");
+		return(0);
+	}
+	
+	printf("                              SEARCH OPERATION  ");
+	printf("\n            ------------------------------------------------------------");
+	printf("\n                 enter the name of the contact you want to search :- ");
+	scanf("%s",c);
+	printf("\n            -----------------------------------------------------------");
+	
+	
+	while(ptr!=NULL)
+	{
+		if(strcmp(ptr->name,c)==0)
+		{
+			f=1;
+			printf("\n			        --------------------------");
+			printf("\n 			     	|contact found            |");
+			break;
+		}
+		else
+		{
+			ptr = ptr->next;
+		}
+		
+	}
+	if(f==1)
+	{
+		printf("\n 			      	|name = %s             |",ptr->name);
+		printf("\n 			      	|number = %d      |",ptr->num);
+		printf("\n			        --------------------------");
+	}
+	else
+	{
+		printf("          --------------------");
+		printf("          | contact not found |");
+		printf("          --------------------");
+	}
+	
+	
+}
+
+
+void display()
+{ 
+	struct node *tmp = first;
+
+    while (tmp != NULL)
+    {
+       printf("\n");
+       printf("\n");
+       printf("\n                        DISPLAY OPERATION  ");
+       printf("\n");
+       printf("\n");
+       printf("\n			        --------------------------");
+	   printf("\n 			      	|name = %s            |",tmp->name);
+		printf("\n 			      	|number = %d      |",tmp->num);
+		printf("\n			        --------------------------");
+       tmp = tmp->next;
+    }
+}
+
+
