@@ -1,0 +1,36 @@
+<html>
+<head><title>INDEXED_ARY</title></head>
+<body>
+<form method ="POST" > 
+   
+ <h4>enter no:<input type="number" name="no"></h4>
+
+ <input type="submit" name="submit">  
+	
+
+</form> 
+
+</body>  
+ 
+
+<?php
+ 
+ $i;
+
+ if(isset($_POST["submit"]))
+
+ {
+
+   $n=$_POST["no"];
+
+  for ($i = 1; $i <= 10; $i++) 
+  {
+     echo "\t", $n. " * ". $i. " = ". $n * $i. "<br/>";
+  }
+
+ }
+
+
+?>
+
+</html>
