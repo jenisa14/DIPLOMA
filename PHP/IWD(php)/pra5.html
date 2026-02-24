@@ -1,0 +1,11 @@
+<h1>fourth sem result analysis</h1>
+<br><br>
+
+<table border="1">
+<th>name of student</th>
+<th>result</th>
+<tr *ngFor="let stud of classresult" [style.color="getcolor(stud.result)"]>
+<td>{{stud.name}}</td>
+<td>{{stud.result}}</td>
+</tr>
+</table>
