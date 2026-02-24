@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 20px;
+            min-height: 60px;
+            border-bottom: #bbb 1px solid;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .form-container {
+            background-color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 12px;
+                padding: 6px;
+            }
+            .form-container {
+                padding: 12px;
+            }
+            .form-container input, .form-container select {
+                padding: 6px;
+                font-size: 12px;
+            }
+            .button {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Room Accommodation </h1>
+    </header>
+
+    <div class="container">
+        <!-- Form to Add or Edit Room -->
+        <div class="form-container">
+            <h2>Add/Edit Room</h2>
+            <form id="roomForm">
+                <label for="room_number">Room Number:</label>
+                <input type="text" id="room_number" name="room_number" required>
+
+                <label for="room_type">Room Type:</label>
+                <input type="text" id="room_type" name="room_type" required>
+
+                <label for="capacity">Capacity:</label>
+                <input type="number" id="capacity" name="capacity" required>
+
+                <label for="current_occupants">Current Occupants:</label>
+                <input type="number" id="current_occupants" name="current_occupants" required>
+
+                <label for="price_per_month">Price per Month:</label>
+                <input type="number" step="0.01" id="price_per_month" name="price_per_month" required>
+
+                <label for="availability_status">Availability Status:</label>
+                <select id="availability_status" name="availability_status">
+                    <option value="available">Available</option>
+                    <option value="occupied">Occupied</option>
+                </select>
+
+                <label for="floor">Floor:</label>
+                <input type="number" id="floor" name="floor" required>
+
+                <button type="submit" class="button">Save Room</button>
+            </form>
+        </div>
+
+        <!-- Room Information Table -->
+        <h4>Room List</h4>
+        <table id="roomTable">
+            <thead>
+                <tr>
+                    <th>Room ID</th>
+                    <th>Room Number</th>
+                    <th>Room Type</th>
+                    <th>Capacity</th>
+                    <th>Current Occupants</th>
+                    <th>Price per Month</th>
+                    <th>Availability Status</th>
+                    <th>Floor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Room Data Rows will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Simple script to add room data to the table
+        document.getElementById('roomForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const roomNumber = document.getElementById('room_number').value;
+            const roomType = document.getElementById('room_type').value;
+            const capacity = document.getElementById('capacity').value;
+            const currentOccupants = document.getElementById('current_occupants').value;
+            const pricePerMonth = document.getElementById('price_per_month').value;
+            const availabilityStatus = document.getElementById('availability_status').value;
+            const floor = document.getElementById('floor').value;
+
+            const tableBody = document.querySelector('#roomTable tbody');
+
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>${Date.now()}</td>
+                <td>${roomNumber}</td>
+                <td>${roomType}</td>
+                <td>${capacity}</td>
+                <td>${currentOccupants}</td>
+                <td>${pricePerMonth}</td>
+                <td>${availabilityStatus}</td>
+                <td>${floor}</td>
+            `;
+
+            tableBody.appendChild(newRow);
+            
+            // Reset the form after submission
+            document.getElementById('roomForm').reset();
+        });
+    </script>
+</body>
+</html>

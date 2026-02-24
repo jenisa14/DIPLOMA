@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .controls input, .controls select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .actions button {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .edit {
+            background-color: #28a745;
+            color: white;
+        }
+        .delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save {
+            background-color: #007bff;
+            color: white;
+        }
+        .export {
+            background-color: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Fee Management</h2>
+
+        <div class="controls">
+            <input type="date" id="dueDate" placeholder="Filter by Due Date">
+            <select id="paymentStatus">
+                <option value="">Select Payment Status</option>
+                <option value="paid">Paid</option>
+                <option value="pending">Pending</option>
+            </select>
+            <input type="text" id="search" placeholder="Search by Student ID or Name">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fee ID</th>
+                    <th>Student ID</th>
+                    <th>Amount</th>
+                    <th>Payment Status</th>
+                    <th>Payment Date</th>
+                    <th>Due Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>1001</td>
+                    <td>$500.00</td>
+                    <td>✅ Paid</td>
+                    <td>2025-01-20 14:30</td>
+                    <td>2025-01-30</td>
+                    <td class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>1002</td>
+                    <td>$300.00</td>
+                    <td>❌ Pending</td>
+                    <td>-</td>
+                    <td>2025-02-05</td>
+                    <td class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="buttons">
+            <button class="save">Save Changes</button>
+            <button class="export">Export CSV/PDF</button>
+        </div>
+    </div>
+
+</body>
+</html>

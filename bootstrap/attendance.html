@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .controls input, .controls select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .actions button {
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .edit {
+            background-color: #28a745;
+            color: white;
+        }
+        .delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save {
+            background-color: #007bff;
+            color: white;
+        }
+        .export {
+            background-color: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Attendance </h3>
+
+        <div class="controls">
+            <input type="date" id="attendanceDate">
+            <input type="text" id="search" placeholder="Search by name or ID">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>John Doe</td>
+                    <td>2025-01-29</td>
+                    <td>
+                        <select>
+                            <option value="present">✅ Present</option>
+                            <option value="absent">❌ Absent</option>
+                        </select>
+                    </td>
+                    <td class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Jane Smith</td>
+                    <td>2025-01-29</td>
+                    <td>
+                        <select>
+                            <option value="present">✅ Present</option>
+                            <option value="absent">❌ Absent</option>
+                        </select>
+                    </td>
+                    <td class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="buttons">
+            <button class="save">Save Changes</button>
+            <button class="export">Export CSV/PDF</button>
+        </div>
+    </div>
+
+</body>
+</html>
