@@ -1,0 +1,12 @@
+<!doctype html>
+
+<html>
+<head>
+      <title>hyper-link</title>
+</head>
+
+<body bgcolor = "black" text = "white">
+   <a href = "https://www.gtu.ac.in">visit gtu.com</a>
+</body>
+</html> 
+

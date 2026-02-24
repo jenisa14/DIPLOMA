@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+<head>
+      <title>table-tag</title>
+</head>
+
+<body  bgcolor = "blue" text = "white">
+ 
+<table width = 100% height = 200px border = 1px cellspacing = 0px cellpadding = 10px >
+  <tr align = right valign = top>
+	<td>Day</td>
+	<td>Time</td>
+        <td>Menu</td>
+	
+  </tr>
+
+
+<tr align = right valign = top>
+	<td>friday</td>
+	<td>7:00 AM</td>
+        <td>1 Half fried egg with 2 toast including a cup of tea</td>
+	
+  </tr>
+
+<tr align = right valign = top>
+	<td>saturday</td>
+	<td>7:00 AM </td>
+        <td>1 Glass of fresh juice including fried toast 3 pieces</td>
+	
+  </tr>
+
+<tr align = right valign = top>
+	<td>sunday</td>
+	<td>7:00 AM</td>
+        <td>3 Spoon honey with Naan including a cup of tea</td>
+	
+  </tr>
+
+<tr align = right valign = top>
+	<td>monday</td>
+	<td>7:00 AM</td>
+        <td>1 Paratha with 2 cups of tea</td>
+	
+  </tr>
+<tr align = right valign = top>
+	<td>tuesday</td>
+	<td>7:AM</td>
+        <td>2  Pieces of beef,Local Naan ,and a Cup of tea</td>
+	
+  </tr>
+<tr align = right valign = top>
+	<td>Wednesday</td>
+	<td>7:00 AM</td>
+        <td>1 Pieces of boiled egg with a Cup of Tea</td>
+	
+  </tr>
+<tr align = right valign = top>
+	<td>Thursday</td>
+	<td>7:00 AM</td>
+        <td>1 Glass mango juice including 2 half-fried toasts</td>
+	
+  </tr>
+
+    
+  
+</table>
+
+</body>
+
+</html>

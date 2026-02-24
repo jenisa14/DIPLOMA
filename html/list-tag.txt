@@ -1,0 +1,38 @@
+<html>
+
+<head>
+      <title>list-tag</title>
+</head>
+
+<body  bgcolor = "black" text = "white">
+<ul type = "square">
+
+
+<li>yatri</li>
+<li>jenisa</li>
+<li>purva</li>
+
+
+</ul>
+
+<ol type = "1">
+
+
+<li>lisa</li>
+<li>rose`</li>
+<li>jennie</li>
+<li>jisoo</li>
+
+</ol>
+ 
+ 
+
+
+ 
+
+
+</body>
+   
+
+                         
+</html>

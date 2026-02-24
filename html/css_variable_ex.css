@@ -1,0 +1,24 @@
+#div1{
+
+    background-color:chocolate;
+    width:50%;
+    float:left;
+}
+
+#div2{
+    background-color:aqua;
+    width: 50%;
+    float: left;
+}
+
+@media (max-width:600px){
+    #div1{
+
+        width: 100%;
+    }
+    #div2{
+
+        width: 100%;
+    }
+
+}

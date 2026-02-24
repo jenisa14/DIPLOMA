@@ -1,0 +1,11 @@
+<html>
+
+<head>
+     <title>image</title>
+</head>
+
+<body>
+     <img src = "1.jpg" width = 80% border = 1%>
+</body>
+
+</html>

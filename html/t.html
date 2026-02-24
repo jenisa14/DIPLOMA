@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+<head>
+      <title>HTML 5 form validation</title>
+</head>
+
+<body  bgcolor = "black" text = "white">
+ 
+<form>
+  <fieldset>
+
+    <legend>User Information</legend>
+
+    <label>First Name:</label>
+    <input type="text" name="fname">
+
+    <label>Last Name:</label>
+    <input type="text" name="lname">
+
+    <label>Mobail No:</label>
+    <input type="number" name="mobailno" 
+    
+                  pattern="[0-9]{10}"
+                  title="enter 10 digit mobail number" required/>
+
+    <label>Email:</label>
+    <input type="email" name="email" required/>
+
+  </fieldset>
+</form>
+
+</body>
+
+</html>

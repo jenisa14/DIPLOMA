@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form using DOM</title>
+    <script>
+        function f() {
+            var a = document.forms["myForm"];
+            var u = a.uname.value;
+            var p = a.psw.value;
+
+            if(u === "jenisa" && p === "jenisa^39") {
+                alert("Valid");
+            } else {
+                alert("Invalid");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm">
+        <input type="text" name="uname" placeholder="Enter username"><br><br>
+        <input type="password" name="psw" placeholder="Enter password"><br><br>
+        <input type="button" name="submit" value="Submit" onClick="f()">
+    </form>
+</body>
+</html>

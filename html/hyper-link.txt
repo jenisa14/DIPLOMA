@@ -1,0 +1,18 @@
+<!doctype html>
+
+<html>
+<head>
+      <title>hyper-link</title>
+</head>
+
+<body bgcolor = "black" text = "white">
+   <a href = "1.ppt">   <h1 style = "text-align : center; color : green;">ch - 1</h1> 
+
+   <a href = "2.ppt">   <h1 style = "text-align : center; color : rgb(255,0,0);" >ch - 2</h1>
+   
+   <a href = "3.ppt">   <h1 style = "text-align : center; color : #000000;">ch - 3</h1>
+ 
+   <a href = "4.ppt">   <h1 style = "text-align : center; color : #ffffff;">ch - 4</h1> 
+    
+</body>
+</html>
